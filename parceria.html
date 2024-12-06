@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon">
+    <title>Parceria</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&family=Lalezar&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background: #F0F2F3;
+    box-shadow: 20px 11px 92.1px #A2B0C7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+body {
+    background-color: #f1f2f4;
+    font-family: 'Inria Sans', sans-serif;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+.menu-icon {
+    display: none;
+    position: absolute;
+    right: 44px;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #0C243E;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #0056b3;
+}
+
+.logo {
+    position: absolute;
+    left: 44px;
+}
+
+#home {
+    background-image: url('assets/parceriahome.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #f1f2f4;
+    width: 100%;
+    padding-top: 46%;
+}
+
+#servicos {
+    text-align: center;
+    padding: 80px 20px;
+    padding-bottom: 40px;
+    background-color: #f1f2f4;
+}
+
+#servicos h1 {
+    font-family: 'Lalezar', sans-serif;
+    font-size: 55px;
+    color: #0C243E;
+    margin-bottom: 20px;
+}
+
+.texto {
+    font-size: 20px;
+    color: #000;
+    max-width: 770px;
+    margin: 0 auto 50px auto;
+    line-height: 1.8;
+}
+
+.texto-descricao {
+    font-size: 22px;
+    color: #333;
+    max-width: 770px;
+    margin: 50px auto 20px auto;
+    font-weight: bold;
+}
+
+.lista {
+    list-style-type: disc;
+    margin: 0 auto 40px auto;
+    padding: 0;
+    max-width: 750px;
+    text-align: left;
+    line-height: 2;
+    color: #333;
+}
+
+.lista li {
+    margin: 10px 0;
+}
+
+#contato {
+    width: 100%;
+    height: 791px;
+    background-image: url('assets/curvainferior.svg');
+    background-size: cover;
+    background-repeat:no-repeat ;
+    color: #F1F2F4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-contato {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+.contato-texto h1 {
+    font-family: 'Lalezar', sans-serif;
+    font-size: 65px;
+    font-weight: 400;
+    color: #F1F2F4;
+    width: 565px;
+    height: 147px;
+    line-height: 70px;
+    margin-bottom: 6px;
+    padding-left: 15px;
+}
+
+.contato-texto h1 span {
+    color: #FED579;
+}
+
+.contato-texto p {
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+    text-align: center;
+    gap: 32px;
+    margin-bottom: 29px;
+}
+
+.botaowpp {
+    width: 336px;
+    height: 94px;
+    border-radius: 34.5px;
+    background-color: #3ACA62;
+    color: #F1F2F4;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botaowpp:hover {
+    background-color: #28a745;
+}
+
+.redes-sociais h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.redes-sociais p {
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+#footer {
+    width: 100%;
+    height: 275px;
+    background-color: #2b6ba2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    margin-right: 229px;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-address,
+.footer-emails {
+    font-family: 'Inria Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    padding-right: 20px;
+    padding-left: 30px;
+}
+
+.footer-address strong,
+.footer-emails strong {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 895px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 60px;
+        background: #F0F2F3;
+        z-index: 1000;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background: white;
+        width: 240px;
+        height: 360px;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        font-family: 'Inria Sans', sans-serif;
+        font-style: italic;
+    }
+
+    .nav-links li {
+        position: relative;
+        width: 160px;
+        height: 50px;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .nav-links li:active {
+        background: #EBEBEB;
+        border-radius: 10px;
+        width: 220px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .icone img{
+        justify-content: center;
+        width: 50px;
+        height: 55px;
+    }
+
+    .text-center h1{
+        font-size: 20px;
+    }
+
+    #home {
+        width: 100%;
+        height: 650px;
+        padding-top: 90%;
+        background-image: url('assets/mobileparceria.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #contato {
+        background-image: url('assets/mobile2.svg');
+        width: 100%;
+        height: 609px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .container-contato{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contato-texto h1 {
+        width: 100%;
+        font-size: 50px;
+        line-height: 1.2;
+        color: #FFFFFF;
+        text-align: center;
+    }
+    
+    .contato-texto p {
+        width: 100%;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .botaowpp {
+        margin-top: 30px;
+        width: 200px;
+        height: 80px;
+        background-color: #25D366;
+        color: #FFFFFF;
+        align-items: center;
+        justify-content: center;
+        border-radius: 45.5px;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    
+    .botaowpp:hover {
+        background-color: #1DA851;
+    }
+    
+    .redes-sociais {
+        display: none;
+    }
+
+    .contato-texto img{
+        display: none;
+    }
+
+    #footer {
+        background-color: #2B6BA2;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 40px 20px;
+        font-family: 'Inria Sans', sans-serif;
+        height: 450px;
+    }
+    
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    
+    .footer-logo {
+        position: absolute;
+        top: 22px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 160px;
+        height: 60px;
+    }
+    
+    .footer-info {
+        margin-top: 120px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .footer-emails {
+        text-align: left;
+    }
+
+    .footer-address{
+        text-align: left;
+        padding: 20px;
+    }
+    
+    .footer-emails strong, .footer-address strong {
+        font-weight: bold;
+        font-size: 18px;
+        display: block;
+    }
+    
+    .footer-emails p, .footer-address p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    #home {
+        width: 100%;
+        height: 150px;
+        padding-top: 90%;
+        background-image: url('assets/mobileparceria.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .contato-texto{
+        display: flex;
+        align-items: center;
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .contato-texto h1{
+        font-size: 40px;
+    }
+
+    .contato-texto p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #footer{
+        height: 500px;
+    }
+}
+
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#home"><img src="assets/Logo.svg" alt="Logo" width="139" height="53"></a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="assets/Menu.svg" alt="Menu Icon" width="49" height="49">
+        </div>
+        <ul id="navLinks" class="nav-links">
+            <li><a href="#servicos">SERVIÇOS</a></li>
+            <li><a href="#sobre">SOBRE NÓS</a></li>
+            <li><a href="#duvida">DÚVIDAS</a></li>
+            <li><a href="#blog">BLOG</a></li>
+            <li><a href="#contato">CONTATO</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home"></section>
+
+<section id="servicos">
+    <div class="icone">
+        <img src="assets/parceriaicon.svg" alt="Icon" width="80" height="85.85">
+    </div>
+    <div class="text-center">
+        <h1>Parceria para o Sucesso</h1>
+        <p class="texto">A visão de longo prazo e o compromisso em construir parcerias sólidas com os clientes, acompanhamento da evolução do negócio do cliente e às suas necessidades, compartilhamento de conhecimento e melhores práticas.</p>
+        <p class="texto-descricao"><strong>Parceria estratégica:</strong></p>
+    </div>
+    <ul class="lista">
+        <li>Alinhamento dos objetivos do cliente com os nossos</li>
+        <li>Co-criação de soluções personalizadas</li>
+        <li>Compromisso com o sucesso a longo prazo</li>
+    </ul>
+
+    <div class="text-center">
+        <p class="texto-descricao"><strong>Acompanhamento personalizado:</strong></p>
+    </div>
+    <ul class="lista">
+        <li>Monitoramento contínuo dos resultados</li>
+        <li>Adaptação às mudanças do mercado</li>
+        <li>Suporte em todas as etapas do negócio</li>
+    </ul>
+
+    <div class="text-center">
+        <p class="texto-descricao"><strong>Compartilhamento de conhecimento:</strong></p>
+    </div>
+    <ul class="lista">
+        <li>Acesso a informações e insights relevantes</li>
+        <li>Treinamento e desenvolvimento de equipes</li>
+        <li>Melhores práticas do mercado</li>
+    </ul>
+</section>
+
+<section id="contato">
+    <div class="container-contato">
+        <div class="contato-texto">
+            <h1>Entre em <span>contato</span> conosco!</h1>
+            <p><img src="assets/Message.svg" width="51" height="51"> suaempresa@email.com</p>
+            <button class="botaowpp">WhatsApp</button>
+        </div>
+        <div class="redes-sociais">
+            <h2>Redes Sociais:</h2>
+            <p>Instagram:</p>
+            <p>@jobalcontabilidade</p>
+        </div>
+    </div>
+</section>
+
+<footer id="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="assets/Logo.svg" alt="Logo Jobal" width="204" height="78.68">
+        </div>
+        <div class="footer-info">
+            <div class="footer-address">
+                <strong>Endereço da empresa</strong><br>
+                Rua Doutor Almeida Santos, Santo Joaquim, 123<br>
+                Belo Horizonte - Minas Gerais
+            </div>
+            <div class="footer-emails">
+                <strong>Outros e-mails</strong><br>
+                contato@gmail.com<br>
+                contatoempresa@gmail.com
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const navLinks = document.getElementById("navLinks");
+        if (navLinks.style.display === "block") {
+            navLinks.style.display = "none";
+        } else {
+            navLinks.style.display = "block";
+        }
+    }
+</script>
+</body>
+</html>
